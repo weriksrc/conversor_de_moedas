@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                 ),
               );
             default:
-              if(snapshot.hasError){
+              if(snapshot.hasError) {
                 return Center(
                   child: Text('Erro ao Carregar Dados!',
                     style: TextStyle(
@@ -138,14 +138,13 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children:<Widget>[
+                    children:<Widget> [
                       Icon(Icons.monetization_on, size: 150, color: Colors.amber),
                       buildTextField('Reais', 'R\$ ', realController, _realChanged, _clearAll),
                       buildTextField('Dólares', 'US\$ ', dolarController, _dolarChanged, _clearAll),
                       buildTextField('Euros', '€ ', euroController, _euroChanged, _clearAll),
-                      
-                    ]
-                  )
+                    ],
+                  ),
                 );
               }
           }
@@ -172,14 +171,6 @@ Widget buildTextField(String label, String prefix, TextEditingController textEdi
       ),
       onChanged: change,
       onTap: clear,
-      // onTap: (){
-      //   if(label == 'Reais')
-      //     realController.text = "";
-      //   if(label == 'Dólar')
-      //     dolarController.text = "";
-      //   if(label == 'Euro')
-      //     euroController.text = "";
-      // },
       keyboardType: TextInputType.number,
     ),
   );
